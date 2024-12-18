@@ -1,20 +1,19 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observer;
 
 public class ArenaNotifier {
-    private List<Character> observers = new ArrayList<Character>();
+    private List<ConcreteCharacter> observers = new ArrayList<ConcreteCharacter>();
 
-    public void addObserver(Character observer) {
+    public void addObserver(ConcreteCharacter observer) {
         observers.add(observer);
     }
 
-    public void removeObserver(Character observer) {
+    public void removeObserver(ConcreteCharacter observer) {
         observers.remove(observer);
     }
 
     public void notifyObservers() {
-        for (Character observer : observers) {
+        for (ConcreteCharacter observer : observers) {
             System.out.println(observer.name + ": Battle begins on arena!");
         }
     }
